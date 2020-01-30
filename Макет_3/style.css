@@ -1,0 +1,283 @@
+@font-face {
+	font-family: "FiraSans-Light"; /* Имя шрифта */
+	src: url("FiraSans-Light.otf");
+	color: white;
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "FiraSans-Light";
+}
+
+
+.container {
+	min-height: 100%;
+	margin-bottom: -70px;
+	margin: 0 auto;
+	overflow: hidden;
+	min-width: 1200px;
+	width: 1200px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+/*.container:after {
+	content:'';
+	display: block;
+}
+
+.container:after, footer {
+	height: 50px;
+	margin-top: -50px
+}*/
+
+/*header, .main, .about {
+	min-width: 1200px;
+	margin: 0 auto;
+}*/
+
+footer {
+	height: 70px;
+	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+	background-color: #212121;
+	margin: 0 auto;
+	text-align: center;
+
+}
+footer,
+.push {
+  height: 70px;
+}
+.footer_container {
+	padding: 16px;
+}
+.footer_text {
+	opacity: 0.5;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21.09px;
+}
+
+
+/*--------------header-section----------------------------------------
+*/
+
+
+header {
+	background-color: #8cc34b;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.header_container {
+	padding: 15px 30px 15px 30px;
+	margin: 0 auto;
+	overflow: hidden;
+	min-width: 1200px;
+	width: 1200px;
+	box-sizing: border-box;
+}
+
+.header_name {
+	color: #ffffff;
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 28.35px;
+
+}
+.header_email {
+	opacity: 0.7;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 28.35px;
+}
+.header_contacts {
+	padding-top: 5px;
+}
+.header_img {
+	float: left;
+	margin-right: 20px;
+
+}
+ a {
+	color:white;
+}
+a:hover {
+	cursor: pointer;
+	opacity: 1.0;
+}
+.header_icons {
+	opacity: 0.7;
+	color: white;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 28px;
+	float: right;
+	padding-top: inherit;
+}
+.header_icons:nthchild(odd), .header_icons:nthchild(odd):hover{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.header_icons:hover {
+	opacity: 1.0;
+	color: white;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 28px;
+	padding-top: inherit;
+
+}	
+
+
+
+/*--------------about-section---------------------------------------
+*/
+
+
+.about {
+	text-align: center;
+	padding: 75px 150px 75px 130px;
+}
+.block_name_0 {
+	margin-bottom: 41px;
+
+}
+
+.block_name {
+	color: #212121;
+	font-size: 42px;
+	font-weight: 800;
+	line-height: 27.82px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.block_name_2 {
+	padding-left: 8px;
+	color: #727272;
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 27.82px;
+
+}
+
+.about_info {
+	display: inline-block;
+	text-align: left;
+	width: 47%;
+}
+.about_info:last-of-type {
+	margin-left: 45px;
+	vertical-align: top;
+}
+.about_img {
+	float: left;
+	overflow: hidden;
+	width: 140px;
+	margin-right: 20px;
+}
+.about_info_h {
+	margin-bottom: 18px;
+	color: #212121;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 28px;
+}
+.about_info_p {
+	padding-left: 160px;
+	color: #727272;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
+	padding-top: 15px;
+	
+}
+.about_ya {
+	color: #03a9f4;
+	text-decoration: underline;
+}
+
+
+
+/*---------------main-section---------------------------------
+*/
+
+
+.main {
+	background-image: url(bg.png);
+	 -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; ;
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	min-height: 100%;
+}
+
+
+.main_block {
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	width: 300px;
+	display: inline-block;
+	margin-right: 20px; 
+	text-align: left;
+	margin-bottom: 70px;
+	border-radius: 3px;
+}
+
+.main_block_h {
+	color: #212121;
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 28px;
+	padding-top: 20px;
+	padding-left: 1px;
+	padding-bottom: 15px;
+}
+
+.main_block_p, .main_block_h, .main_block_time {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.main_check {
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #727272;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28px;
+	background: #f6f7f2;
+	padding-bottom: 10px;
+}
+
+.main_block_p {
+	color: #727272;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
+}
+
+.main_block_time {
+	color: #b6b6b6;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
+	padding-bottom: 18px;
+	padding-top: 18px;
+
+}
+.fa fa-clock-o {
+	
+}

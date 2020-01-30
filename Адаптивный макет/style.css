@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	font-family: Arial;
+}
+
+.header, .menu, .footer {
+	width: 100%;
+	min-height:calc(100vh-40px);
+}
+
+.main_container {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+}
+
+.header_container {
+	background: black;
+	color: #ffffff;
+	font-family: "Arial MT";
+	font-size: 11px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: -0.06px;
+	height: 30px;
+}
+
+.footer_footer {
+	background: black;
+	/* Style for "Privacy &" */
+	
+	
+	color: #8d8d8d;
+	font-family: "Arial MT";
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 20px;
+}
