@@ -1,0 +1,121 @@
+@font-face {
+	font-family: "FiraSans"; /* Имя шрифта */
+	src: url("FiraSans-Light.otf");
+	color: white;
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "FiraSans"; /* Имя шрифта */
+	src: url("FiraSans-Regular.otf");
+	color: white;
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "FiraSans"; /* Имя шрифта */
+	src: url("FiraSans-SemiBold.otf");
+	color: white;
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "FiraSans"; /* Имя шрифта */
+	src: url("FiraSans-Bold.otf");
+	color: white;
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "FiraSans";
+}
+
+
+.container {
+	margin: 0 auto;
+	min-width: 1200px;
+	width: 1200px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.main:after {
+	content:'';
+	display: block;
+}
+.main {
+	margin-bottom: -70px;
+
+}
+
+.main:after, footer {
+	height: 70px;
+}
+
+/*header, .main, .about {
+	min-width: 1200px;
+	margin: 0 auto;
+}*/
+
+footer {
+	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+	background-color: #212121;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer_container {
+	padding: 16px;
+}
+.footer_text {
+	opacity: 0.5;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21.09px;
+}
+
+.checkbox-alias{
+	background-color: white;
+	border: 2px grey solid;
+	border-opacity: 0.5;
+	border-radius: 2px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+	z-index: 1;
+  	position: relative;
+  	transition: all 50ms ease-out;
+	  cursor: pointer;
+  
+}
+
+.invisible-checkboxes input[type=checkbox]{
+  display: none;
+/*   margin-right: -20px;
+  position: relative;
+  z-index: 2; */
+}
+
+.invisible-checkboxes input[type=checkbox]:checked + .checkbox-alias{
+	background-color: #acd37e;
+}
+
+.checkmark {
+	width: 90px;
+	height: 17px;
+	color: #727272;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28px;
+	opacity: 0.7;
+}

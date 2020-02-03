@@ -1,0 +1,133 @@
+.main {
+	background-image: url(bg.png);
+	 -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; ;
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	min-height: 100%;
+}
+
+
+.main_block {
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	width: 300px;
+	display: inline-block;
+	margin-right: 20px; 
+	text-align: left;
+	margin-bottom: 70px;
+	border-radius: 3px;
+	vertical-align: top;
+}
+
+.main_block_h {
+	color: #212121;
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 28px;
+	padding-top: 20px;
+	padding-left: 1px;
+	padding-bottom: 15px;
+}
+
+.main_block_p, .main_block_h, .main_block_time {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.main_check {
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #727272;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28px;
+	background: #f6f7f2;
+	padding-bottom: 15px;
+	padding-top: 15px;
+
+}
+
+.main_block_p {
+	color: #727272;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
+}
+
+.main_block_time {
+	color: #b6b6b6;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 21px;
+	padding-bottom: 18px;
+	padding-top: 18px;
+
+}
+.main_check:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.main_check input:checked ~ .checkmark {
+  background-color: #acd37e;
+}
+input {
+	margin-right: 20px;
+	width: 20px;
+}
+.check_text {
+	color: #727272;
+
+
+font-size: 18px;
+
+font-weight: 400;
+
+line-height: 28px;
+}
+.checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.25rem;
+}
+
+.checkbox > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid #34495E;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #41B883;
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    border: 1px solid #41B883;
+    background-color: #34495E;
+}
+
+.checkbox > input:checked + span::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    background-color: #41B883;
+    position: absolute;
+    left: 0.7rem;
+    top: 0.2rem;
+}
+
+.checkbox > input:active {
+    border: 2px solid #34495E;
+}
