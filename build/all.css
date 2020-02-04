@@ -48,14 +48,20 @@ body {
 	text-align: center;
 }
 
-.main:after {
-	content:'';
-	display: block;
+.wrapper:after {
+	 content:'';
+	display: block; 
+
 }
-.main {
-	min-height: 100%;
+.wrapper:after, footer {
+	height: 80px;
 }
 
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -80px;
+
+}
 
 
 /*header, .main, .about {
@@ -78,7 +84,6 @@ footer {
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 400;
-	line-height: 21.09px;
 }
 
 
@@ -98,7 +103,7 @@ header {
 .header_name {
 	color: #ffffff;
 	font-size: 21px;
-	font-weight: bold;
+	font-weight: 400;
 	line-height: 28.35px;
 
 }
@@ -152,7 +157,7 @@ a:hover {
 
 .about {
 	text-align: center;
-	padding: 75px 150px 75px 130px;
+	padding: 75px 130px;
 }
 .block_name_0 {
 	margin-bottom: 41px;
@@ -169,10 +174,9 @@ a:hover {
 	overflow: visible;
 }
 .block_name_2 {
-	padding-left: 8px;
 	color: #727272;
 	font-size: 21px;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 27.82px;
 
 }
@@ -216,10 +220,14 @@ a:hover {
 
 .main {
 	background-image: url(bg.png);
-	 -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; ;
+	-moz-background-size: 100%;
+	/* Firefox 3.6+ */
+	-webkit-background-size: 100%;
+	/* Safari 3.1+ и Chrome 4.0+ */
+	-o-background-size: 100%;
+	/* Opera 9.6+ */
+	background-size: 100%;
+	;
 	text-align: center;
 	padding-top: 80px;
 	padding-bottom: 10px;
@@ -232,13 +240,16 @@ a:hover {
 	background-color: #ffffff;
 	width: 300px;
 	display: inline-block;
-	margin-right: 20px; 
+	margin-right: 20px;
 	text-align: left;
 	margin-bottom: 70px;
 	border-radius: 3px;
 	vertical-align: top;
 }
 
+.main_block:nth-child(3n) {
+	margin-right: 0;
+}
 
 .main_block_h {
 	color: #212121;
@@ -249,9 +260,10 @@ a:hover {
 	padding-left: 1px;
 	padding-bottom: 15px;
 }
-.main_block:hover:not(.main_check){
+
+.main_block:hover:not(.main_check) {
 	cursor: pointer;
-	background-color:#edf5e3;
+	background-color: #edf5e3;
 	color: #94c757;
 }
 
@@ -263,19 +275,27 @@ a:hover {
 	bottom:9px;
 	opacity: 0;
 } */
-/* .main_block:hover .main_rectangle {
+
+.block_image {
+	position: relative;
+}
+
+.main_block:hover .rect {
 	width: 300px;
 	height: 5px;
-	background-color: #94c757;
-	position: relative;
-	bottom:9px;
+	background: #94c757;
+	position: absolute;
+	bottom: 10px;
 	opacity: 1.0;
-	} */
-	.main_block:hover .main_block_h  {
-		color:#8cc34b
-	}
+}
 
-.main_block_p, .main_block_h, .main_block_time {
+.main_block:hover .main_block_h {
+	color: #8cc34b
+}
+
+.main_block_p,
+.main_block_h,
+.main_block_time {
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -362,22 +382,21 @@ a:hover {
 
 
 
-   
-   label {
-	 color: #000;
+label {
+	color: #000;
 	cursor: default;
 	font-weight: normal;
 	line-height: 30px;
 	padding: 10px 0;
 	vertical-align: middle;
 	width: 100%;
-   }
-   
-   label:before {
+}
+
+label:before {
 	content: " ";
 	color: white;
 	display: inline-block;
-   /* шрифт Awesome*/
+	/* шрифт Awesome*/
 	font: 13px/20px FontAwesome;
 	margin-right: 15px;
 	position: relative;
@@ -390,30 +409,28 @@ a:hover {
 	border: 2px solid #b6b6b6;
 	border-radius: 2px;
 	vertical-align: middle;
-   }
-   
-   input:checked + label:before {
+}
+
+input:checked+label:before {
 	content: "\f00c";
 	background-color: #acd37e;
-	border: none;;
-   }
-   
-   input:disabled + label:before {
+	border: none;
+	;
+}
+
+input:disabled+label:before {
 	background: #eee;
 	color: #aaa;
-   }
-   #checkbox-id {
-	   display: none;
-   }
+}
 
-   .main_text {
+.main_text {
 	color: #727272;
 	font-size: 18px;
-	font-weight: 300;
-	line-height: 28px; 
+	font-weight: 400;
+	line-height: 28px;
 	padding-left: 10px;
-   }
+}
 
-   .checkbox {
-	   display: none;
-   }
+input[type=checkbox] {
+	display: none;
+}
