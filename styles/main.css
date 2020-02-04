@@ -13,7 +13,15 @@
 	color: white;
 	text-transform: uppercase;
 	background-color: #f4845d;
-	height: 88px;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: 400;
+	text-align: left;
+	padding: 31px 33px;
+}
+.hot_img {
+	float: right;
+	padding-top: 5px;
 }
 .main_pics_button {
 	background-color: #fd926d;
@@ -45,7 +53,7 @@
 	height: 530px;
 	text-align: center;
 	background: #f7f7f7;
-	vertical-align: middle;
+	
 	padding-top: 10px;
 }
 .main_sale_block {
@@ -60,23 +68,23 @@
 	width: 17px;
 	padding: 22px 20px;
 }
-.main_pics_button_text {
+.main_pics_button{
 	color: white;
-	padding-bottom: 
+	display: inline-block;
 }
 .main_load {
 width: 220px;
-height: 60px;
 background-color: #000000;
 margin: 0 auto;
 margin-top: 30px;
 color: white;
+padding: 23px 0;
+font-family: Arial;
 }
 .main_load_text {
-	display: block;
-/*	font-family: "Helvetica Neue LT Std - Lt";
-*/	font-size: 20px;
+	font-size: 20px;
 	font-weight: 400;
-	line-height: 30px;
-	text-transform: uppercase; 
+	line-height: 60px;
+	text-transform: uppercase;
+	margin-top:22px;
 }

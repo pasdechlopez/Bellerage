@@ -18,8 +18,7 @@ body {
 	margin: 0 auto;
 }
 .wrapper {
-	text-align: center;
-
+	font-family: Trebuchet;
 }
 .wrapper:after {
 	content: "";
@@ -34,21 +33,25 @@ footer {
 }
 .footer_container {
 	padding: 30px;
+	vertical-align:  bottom;
 }
 .footer_text {
 	font-size: 24px;	
 	font-weight: 400;
-	line-height: 30px;
+	line-height: 60px;
 	font-family: Arial;
 	float: right;
 	color: #8d8d8d;
+	text-align: right;
 }
 
 .menu, .main, header, footer {
 }
-.menu_container, .main_container, .header_container, .footer_container {
+ .main_container, .header_container, .footer_container {
 	width: 640px;
 	margin: 0 auto;
+	text-align: center;
+
 }
 
 .header_phone {
