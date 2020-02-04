@@ -1,0 +1,82 @@
+/*____________________________________MAIN________________________*/
+.main {
+	margin: auto 0;
+}
+.sale_hr {
+	width: 640px;
+	height: 1px;
+	background: #d8d8d8;
+	text-align: center;
+	opacity: 0.5;
+}
+.main_hot {
+	color: white;
+	text-transform: uppercase;
+	background-color: #f4845d;
+	height: 88px;
+}
+.main_pics_button {
+	background-color: #fd926d;
+	width: 220px;
+	height: 60px;
+	border-bottom: 6px solid #dd6b44;
+	margin : 27px 15px;
+}
+.main_sale {
+	padding: 40px 30px;
+}
+.main_sale_block:first-child, .main_pics_block:first-child {
+	margin-right: 30px; 
+}
+.main_sale_img {
+	width: 140px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	opacity: 1.0;
+
+}
+.main_pics {
+	background-color: #fd926d;
+	padding: 30px 0px;
+}
+.main_pics_block {
+	display: inline-block;
+	width: 275px;
+	height: 530px;
+	text-align: center;
+	background: #f7f7f7;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+.main_sale_block {
+	width: 275px;
+	height: 525px;
+	display: inline-block;
+	vertical-align: middle;
+		border: 1px dashed blue
+
+}
+.main_pics_plus {
+	width: 17px;
+	padding: 22px 20px;
+}
+.main_pics_button_text {
+	color: white;
+	padding-bottom: 
+}
+.main_load {
+width: 220px;
+height: 60px;
+background-color: #000000;
+margin: 0 auto;
+margin-top: 30px;
+color: white;
+}
+.main_load_text {
+	display: block;
+/*	font-family: "Helvetica Neue LT Std - Lt";
+*/	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+	text-transform: uppercase; 
+}

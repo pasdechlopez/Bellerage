@@ -1,0 +1,74 @@
+@font-face {
+	font-family: "Trebuchet"; /* Имя шрифта */
+	src: url("tr.ttf");
+	color: white;
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0 auto;
+}
+.wrapper {
+	text-align: center;
+
+}
+.wrapper:after {
+	content: "";
+	display: block;
+}
+.wrapper:after, footer {
+	height: 108px;
+}
+footer {
+	background-color: black;
+	color: white;
+}
+.footer_container {
+	padding: 30px;
+}
+.footer_text {
+	font-size: 24px;	
+	font-weight: 400;
+	line-height: 30px;
+	font-family: Arial;
+	float: right;
+	color: #8d8d8d;
+}
+
+.menu, .main, header, footer {
+}
+.menu_container, .main_container, .header_container, .footer_container {
+	width: 640px;
+	margin: 0 auto;
+}
+
+.header_phone {
+	color: #838383;
+	font-size: 30px;
+	font-weight:300;
+	text-transform: uppercase;
+	/* Text style for "custom car" */
+	letter-spacing: -0.15px;
+	padding: 37px 110px;
+	font-family: Arial;
+
+}
+.header_buttons {
+	background-color: black;
+	color:white;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.button_2_img {
+	width: 40px;
+}
