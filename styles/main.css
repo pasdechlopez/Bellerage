@@ -2,6 +2,26 @@
 .main {
 	margin: auto 0;
 }
+.main_h2 {
+	padding: 15px 30px;
+	font-size: 18px;
+font-weight: 400;
+font-family: Arial;
+text-transform: uppercase;
+/* Text style for "Atmos&Here" */
+letter-spacing: -0.14px;
+}
+.main_h3 {
+	font-size: 27px;
+
+font-weight: 400;
+
+text-transform: uppercase;
+
+/* Text style for "$96.55" */
+
+letter-spacing: -0.22px;
+}
 .sale_hr {
 	width: 640px;
 	height: 1px;
@@ -28,12 +48,28 @@
 	width: 220px;
 	height: 60px;
 	border-bottom: 6px solid #dd6b44;
-	margin : 27px 15px;
+	margin : 27px auto;
+	
+}
+.main_pics_button_text {
+	vertical-align: middle;
+	display: inline;
+	font-family: Helvetica Neue LT;
+font-size: 20px;
+font-weight: 400;
+padding-top: 35px;
+padding-left: 30px;
+
+line-height: 30px;
+text-transform: uppercase;
 }
 .main_sale {
-	padding: 40px 30px;
+	padding: 40px 0px;
 }
-.main_sale_block:first-child, .main_pics_block:first-child {
+.main_pics_block:first-child{
+	margin-right: 30px; 
+}
+.main_sale_block:first-child{
 	margin-right: 30px; 
 }
 .main_sale_img {
@@ -50,23 +86,22 @@
 .main_pics_block {
 	display: inline-block;
 	width: 275px;
-	height: 530px;
-	text-align: center;
+	height: 590px;
 	background: #f7f7f7;
-	
+	vertical-align: middle;
 	padding-top: 10px;
 }
 .main_sale_block {
 	width: 275px;
-	height: 525px;
 	display: inline-block;
-	vertical-align: middle;
-		border: 1px dashed blue
-
+	vertical-align: bottom;
 }
+
 .main_pics_plus {
 	width: 17px;
-	padding: 22px 20px;
+	float:right;
+	padding: 20px;
+	vertical-align: top;
 }
 .main_pics_button{
 	color: white;
@@ -78,7 +113,6 @@ background-color: #000000;
 margin: 0 auto;
 margin-top: 30px;
 color: white;
-padding: 23px 0;
 font-family: Arial;
 }
 .main_load_text {
@@ -87,4 +121,10 @@ font-family: Arial;
 	line-height: 60px;
 	text-transform: uppercase;
 	margin-top:22px;
+}
+.sale_block_text {
+	background: #f7f7f7;
+}
+.sale_right_img {
+	padding-bottom: 25px;
 }

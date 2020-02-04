@@ -100,10 +100,11 @@ padding-right: 33px;
 	text-align: center;
 }
 .menu_facebook, .menu_pin, .menu_twitter {
-	display: inline-block;
-	
+	display: inline;
+	vertical-align: middle; 
+	padding: 0;
 }
 .menu_find_text {
-	display: inline-block;
-	padding-bottom: 10px;
+	display: inline;
+	padding-right: 35px;
 }
