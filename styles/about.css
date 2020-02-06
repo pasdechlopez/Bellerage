@@ -4,102 +4,128 @@
 	font-family: Trebuchet;
 	/* Style for "kshop" */
 color: #000000;
-font-size: 92px;
+font-size: 28px;
 letter-spacing: -0.75px;
-text-align: center;
-display: block;
 }
 .menu_logo {
-	margin: 60px 140px;
-
-}
-.menu_search {
-	color:#949393;;
-	width: 610px;
-	padding-bottom: 23px;
-	padding-top: 22px;
-	border: 1px solid #d6d6d6;
-	background-color: #fafafa;
-	margin: 0 auto;
-	
-}
-.menu_search_text {
-	font-family: Arial;
-font-size: 30px;
-font-weight: 400;
-text-transform: uppercase;
-/* Text style for "0 items  |" */
-letter-spacing: -0.15px;
-display: inline-block;	
-padding-left: 280px;
-padding-right: 33px;
-
-}
-.menu_search_img {
-	padding-left: 30px;
+	margin: 38px 373px 40px 110px;
 	display: inline-block;
 	vertical-align: bottom;
 	
 }
+.menu_logo_img {
+	height: 15px;
+}
+.search_block {
+display: inline-block;
+margin:20px 15px ;	
+}
+
+
+.menu_search {
+	color:#949393;;
+	width: 214px;
+	padding:7px 10px;
+	border: 1px solid #d6d6d6;
+	background-color: #fafafa;
+	display: block;
+}
+
+
+.menu_search_text {
+	font-family: Arial;
+font-size: 11px;
+font-weight: 400;
+text-transform: uppercase;
+/* Text style for "0 items  |" */
+letter-spacing: -0.15px;
+display: inline;
+float: right;	
+padding-top: 5px;
+}
+.menu_search_text_1 {
+	font-family: Arial;
+font-size: 12px;
+font-weight: 400;
+/* Text style for "0 items  |" */
+letter-spacing: -0.15px;
+display: inline-block;
+padding-top: 5px;
+margin-right: 139px;
+vertical-align: top;
+
+}
+
+.menu_search_img {
+	display: inline-block;
+	width: 20px;
+}
+.menu_search_img_1 {
+	display: inline-block;
+	float: right;
+	vertical-align: top;
+}
 
 .menu_menu {
-	width: 610px;
+	width: 730px;
 	background-color: #fd926d;
 	margin: 0 auto;
 	color: white;
 	margin-bottom: 25px;
-	margin-top: 25px;
-	padding: 31px 0px;
 
 }
 .menu_menu_img {
 	float:right;
-	padding-right: 30px;
+	vertical-align: middle;
+	width: 22px;
+	padding: 15px 17px;
+
 }
 
 
 .menu_menu_text {
 	color: white;
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 400;
 	letter-spacing: -0.15px;
 	font-family: Arial;
 	text-align: left;
-	padding-left: 30px;
+	padding: 15px 17px;
+
 	}
 	
 .menu_email_text {
 	color: #9f9f9f;
-	font-size: 30px;
+	font-size: 12px;
 	font-weight: 300;
 	font-style: italic;
 	letter-spacing: -0.15px;
 	padding: 30px 30px;
 }
 .menu_email {
-	width: 610px;
+	width: 160px;
 	background-color: #ededed;
 	margin: 0 auto;
-	height: 96px;
+	height: 28px;
 }
 .menu_menu_plus {
-	width: 37px;
+	width: 11px;
 	box-shadow: 0 8px 0 #dd6b44;
 	background: #fd926d;
-	padding: 24px 30px;
+	padding: 8px 9px;
 	float: right;
 }
 
 .menu_find {
 	color: #6c6c6c;
-	font-size: 26px;
-	width: 610px;
+	font-size: 12px;
 	letter-spacing: -0.13px;
 	padding: 25px 0;
 	margin: 0 auto;
 }
 .menu_facebook, .menu_pin, .menu_twitter {
 	display: table-cell;
+	width: 55px;
 }
 .menu_find_text {
 	display: table-cell;

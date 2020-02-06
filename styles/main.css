@@ -24,7 +24,7 @@ letter-spacing: -0.22px;
 }
 .sale_hr {
 	opacity: 0.5;
-	width: 230px;
+	width: 283px;
 height: 1px;
 text-align: end;
 background-color: #b2b2b2;
@@ -67,20 +67,21 @@ padding: 22px 0 22px 30px;
 .sale_img {
 	background: white;
 	height: 362px;
-	width: 274px;
+	width: 220px;
 	vertical-align: middle;
 }
 
 .main_pics_block:first-child{
 	margin-right: 30px; 
 }
-.main_sale_block:first-child{
+.main_sale_block:not(:last-child){
 	margin-right: 30px; 
 }
 .main_sale_pic {
-	width: 140px;
+	width: 141§px;
 	margin: 0 18px;
 	opacity: 1.0;
+	
 	
 	
 
@@ -92,13 +93,13 @@ padding: 22px 0 22px 30px;
 }
 .main_pics_block {
 	display: inline-block;
-	width: 275px;
+	width: 220px;
 	background: #f7f7f7;
 	vertical-align: bottom;
 	margin-top: 33px;
 }
 .main_sale_block {
-	width: 275px;
+	width: 220px;
 	display: inline-block;
 	vertical-align: bottom;
 }
@@ -136,4 +137,87 @@ font-family: Arial;
 }
 .right_bag {
 	padding-top: 45px;
+}
+.about_payment {
+	width: 760px;
+	background-color: #f7f7f7;
+	display: inline-block;
+}
+.about_p {
+	color: #999999;
+
+font-family: Arial;
+
+font-size: 14px;
+
+font-weight: 400;
+padding: 14px 14px 28px 14px;
+line-height: 18px;
+}
+.about_h {
+	color: #414141;
+
+font-family: Arial;
+
+font-size: 24px;
+
+font-weight: 400;
+
+/* Text style for "About Look" */
+
+letter-spacing: -0.24px;
+}
+.info_h {
+	color: #544f4d;
+text-align: left;
+font-family: Arial;
+padding-bottom: 19px;
+font-size: 16px;
+font-style: bold;
+font-weight: 400;
+
+line-height: 20px;
+
+/* Text style for "Customer S" */
+
+letter-spacing: -0.16px;
+}
+.info_p {
+	color: #544f4d;
+
+font-family: Arial;
+
+font-size: 12px;
+
+font-weight: 400;
+text-align: left;
+line-height: 18px;
+}
+.info_block {
+	text-align: left;
+}
+.info {
+	background: #ededed;
+}
+.info_1, info_2 {
+	padding-top: 30px;
+}
+.info_img {
+	width: 125px;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+.info_icons {
+	vertical-align: top;
+	padding-left: 116px;
+	padding-right: 30px;
+}
+
+.info_1, .info_2, .info_icons, .info_100 {
+	display: inline-block;
+}
+.info_100 {
+	vertical-align: top;
+	padding-top: 20px;
 }
