@@ -47,13 +47,14 @@ footer {
 	text-align: right;
 	display: inline-block;
 	vertical-align: middle;
+	padding-right: 15px;
 }
 .footer_text_1 {
 	font-size: 11px;	
 	font-weight: 400;
 	font-family: Arial;
 	color: #8d8d8d;
-	padding: 34px 15px;
+	padding: 25px 15px;
 	display: inline-block;
 	padding-right: 205px;
 }
@@ -66,7 +67,7 @@ footer {
 
 .menu, .main, header, footer {
 }
- .main_container, .header_container, .footer_container {
+ .main_container, .header_container, .footer_container, .menu_container {
 	width: 760px;
 	margin: 0 auto;
 	text-align: center;
