@@ -117,7 +117,7 @@ footer {
 	border-right: 1px solid grey;
 }
 .button_3 {
-padding-left: 28px;
+padding-left: 25px;
 padding-right: 30px;
 }
 .button_2_img {
@@ -371,4 +371,7 @@ font-family: Arial;
 
 }
 .sale_right_img {
+}
+.right_bag {
+	padding-top: 45px;
 }
