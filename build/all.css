@@ -5,6 +5,13 @@
 	font-weight: 700;
 	font-style: normal;
 }
+@font-face {
+	font-family: "Luxury";
+	src: url("Luxury.ttf");
+	color: white;
+	font-weight: normal;
+	font-style: normal;
+}
 
 * {
 	margin: 0;
@@ -38,6 +45,11 @@ footer {
 }
 .footer_container {
 	background-color: black;
+	display: flex;
+	padding-bottom: 30px;
+	justify-content: center;
+
+align-items: baseline;
 }
 .footer_text {
 	font-size: 11px;	
@@ -45,8 +57,6 @@ footer {
 	font-family: Arial;
 	color: #8d8d8d;
 	text-align: right;
-	display: inline-block;
-	vertical-align: middle;
 	padding-right: 15px;
 }
 .footer_text_1 {
@@ -55,8 +65,7 @@ footer {
 	font-family: Arial;
 	color: #8d8d8d;
 	padding: 25px 15px;
-	display: inline-block;
-	padding-right: 205px;
+	margin-right: 160px;
 }
 .footer_img {
 	padding-left: 30px;
@@ -84,6 +93,11 @@ footer {
 	display: inline-block;
 	margin-right: 320px;
 	margin-left: 15px;
+}
+.header_phone:hover {
+	color:pink;
+	overflow: auto;
+	cursor: pointer;
 }
 .header_buttons {
 	background-color: black;
@@ -140,6 +154,10 @@ margin-right: 15px;
 	vertical-align: bottom;
 	padding-right: 10px;
 }
+.button_1:hover, .button_2:hover, .button_3:hover {
+	background: pink;
+	cursor: pointer;
+}
 /*_____________________________________MENU___________________________
 */
 .menu_logo_text {
@@ -155,6 +173,7 @@ margin-bottom: 30px;
 	text-align: left;
 	margin-right: 368px;
 	margin-left: 15px;
+	vertical-align: middle;
 }
 .menu_logo_img {
 	height: 15px;
@@ -185,6 +204,7 @@ letter-spacing: -0.15px;
 display: inline;
 float: right;	
 padding-top: 5px;
+margin-left: 120px;
 }
 .menu_search_text_1 {
 	font-family: Arial;
@@ -215,8 +235,8 @@ vertical-align: top;
 	margin: 0 auto;
 	color: white;
 	margin-bottom: 25px;
-
 }
+
 .menu_menu_img {
 	float:right;
 	vertical-align: middle;
@@ -232,8 +252,8 @@ vertical-align: top;
 	font-weight: 400;
 	letter-spacing: -0.15px;
 	font-family: Arial;
-	text-align: left;
 	padding: 15px 17px;
+	text-align: left;
 
 	}
 	
@@ -243,15 +263,26 @@ vertical-align: top;
 	font-weight: 300;
 	font-style: italic;
 	letter-spacing: -0.15px;
+	
 }
 .menu_email {
 	width: 160px;
-	background-color: #ededed;
+	background-color: white;
 	height: 28px;
+	align-self: center;
+}
+.menu_block {
+	background: #ededed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 33px;
 }
 .menu_menu_plus {
-	width: 11px;
-	box-shadow: 0 8px 0 #dd6b44;
+	width: 26px;
+	height: 26px;
+	box-shadow: 0 2px 0 #dd6b44;
 	background: #fd926d;
 }
 
@@ -259,23 +290,57 @@ vertical-align: top;
 	color: #6c6c6c;
 	font-size: 12px;
 	letter-spacing: -0.13px;
-	padding: 25px 0;
+	display: inline-block;
+	margin-left: 235px;
 }
 .menu_facebook, .menu_pin, .menu_twitter {
-	display: table-cell;
 	width: 55px;
+	display: table-cell;
+}
+.main_pics_plus {
+	width: 10px;
+	padding-right: 4px;
+	padding-top: 4px;
 }
 .menu_find_text {
-	display: table-cell;
-	padding-right: 35px;
-	vertical-align: middle; 
-	padding-left: 80px;
 	font-family: Arial;
 	font-weight: 500;
+	display: table-cell;
+	vertical-align: middle;
+	padding-right: 15px;
 }
 
 .menu_pic {
 	margin-bottom: 22px;
+	position: relative;
+}
+.menu_pic_text {
+	font-family: "Luxury";
+	color: #78645d;
+position: absolute;
+top:50px;
+left: 175px;
+
+font-size: 27px;
+
+font-weight: 400;
+}
+.crazy_hr {
+	width: 56px;
+position: absolute;
+height: 2px;
+top: 70px;
+left: 110px;
+background: #78645d;
+}
+.crazy_hr_1 {
+	width: 56px;
+position: absolute;
+height: 2px;
+top: 70px;
+left: 245px;
+background: #78645d;
+
 }
 .button_main_left, .button_main_right {
 	width: 30px;
@@ -283,10 +348,11 @@ height: 117px;
 background: white;
 opacity: 0.8;
 position: absolute;
-bottom:470px;
+top: 35%;
+
 }
 .button_main_right {
-left: 923px;
+right: 0;
 }
 .arrow {
 	padding: 50px 8px;
@@ -298,26 +364,72 @@ background: white;
 opacity: 1.0;
 position: absolute;
 bottom:470px;
+cursor: move;
+}
+.menu_pic_text_1 {
+	color: #78645d;
+
+font-family: Helvetica;
+
+font-size: 27px;
+
+font-weight: 400;
+position: absolute;
+top: 220px;
+left: 60px;
+text-transform: uppercase;
+}
+.block_pic {
+	position: absolute;
+	top: 210px;
+	left: 75px;
+}
+.main_pic_button {
+	width: 116px;
+
+height: 40px;
+
+box-shadow: 0 3px 0 #dd6b44;
+position: absolute;
+background: #fd926d;
+bottom: 50px;
+left: 140px;
+color: #ffffff;
+
+font-family: Helvetica;
+
+font-size: 12px;
+
+font-weight: 400;
+
+text-transform: uppercase;
+
 }
 .main_pic_block {
 	width: 158px;
 
 height: 7px;
 
-background-color: #000000;
+background: #000000;
 position: absolute;
 opacity: 0.2;
-bottom: 360px;
+bottom: 5px;
 }
 .main_pic_block:hover {
-	width: 158px;
-
-height: 7px;
-
-background-color: #000000;
-position: absolute;
 opacity: 0.5;
-bottom: 360px;
+cursor: grab;
+}
+.dot {
+	width: 10px;
+	height: 10px;
+	background: #867a76;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.dot:first-child {
+	background-color: #fd926d;
 }
 /*____________________________________MAIN________________________*/
 .main {
@@ -354,7 +466,30 @@ margin-bottom: 70px;
 .sale_hr, .main_sale_pic {
 	display: inline-block;
 }
+.main_mid {
+	display: flex;
+	padding: 0 15px;
+	flex-wrap: wrap;
+	justify-content: end;
+	flex-direction: column-reverse;
+}
 
+.mid_2 {
+	align-self: baseline;
+	width: 484px;
+order:2;
+
+height: 169px;
+}
+.mid_3, .mid_4 {
+	width: 241px;
+	height: 169px;
+	order: -1;
+}
+.main_mid_1, .main_mid {
+	display: flex;
+	flex-direction: row;
+}
 .main_hot {
 	color: white;
 	text-transform: uppercase;
@@ -364,6 +499,7 @@ margin-bottom: 70px;
 	font-weight: 400;
 	text-align: left;
 	padding: 31px 33px;
+	margin-top: 33px;
 }
 .hot_img {
 	float: right;
@@ -404,9 +540,6 @@ padding-right: 5px;
 	width: 141§px;
 	margin: 0 18px;
 	opacity: 1.0;
-	
-	
-	
 
 }
 
@@ -421,6 +554,7 @@ padding-right: 5px;
 	vertical-align: bottom;
 	margin-top: 33px;
 }
+
 .main_sale_block {
 	width: 220px;
 	display: inline-block;
@@ -596,4 +730,44 @@ padding: 0px 40px 20px 20px;
 	vertical-align: middle;
 	padding-right: 30px;
 	text-align: right;
+}
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+.sprite-abandon {
+    width: 51px;
+    height: 57px;
+    background-position: -5px -5px;
+}
+
+.sprite-addict {
+    width: 83px;
+    height: 31px;
+    background-position: -66px -5px;
+}
+
+.sprite-adidas {
+    width: 57px;
+    height: 47px;
+    background-position: -159px -5px;
+}
+
+.sprite-boy {
+    width: 56px;
+    height: 38px;
+    background-position: -226px -5px;
+}
+
+.sprite-converse {
+    width: 84px;
+    height: 16px;
+    background-position: -292px -5px;
+}
+
+.sprite-klein {
+    width: 98px;
+    height: 19px;
+    background-position: -396px -5px;
 }

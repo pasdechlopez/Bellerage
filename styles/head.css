@@ -5,6 +5,13 @@
 	font-weight: 700;
 	font-style: normal;
 }
+@font-face {
+	font-family: "Luxury";
+	src: url("Luxury.ttf");
+	color: white;
+	font-weight: normal;
+	font-style: normal;
+}
 
 * {
 	margin: 0;
@@ -38,6 +45,11 @@ footer {
 }
 .footer_container {
 	background-color: black;
+	display: flex;
+	padding-bottom: 30px;
+	justify-content: center;
+
+align-items: baseline;
 }
 .footer_text {
 	font-size: 11px;	
@@ -45,8 +57,6 @@ footer {
 	font-family: Arial;
 	color: #8d8d8d;
 	text-align: right;
-	display: inline-block;
-	vertical-align: middle;
 	padding-right: 15px;
 }
 .footer_text_1 {
@@ -55,8 +65,7 @@ footer {
 	font-family: Arial;
 	color: #8d8d8d;
 	padding: 25px 15px;
-	display: inline-block;
-	padding-right: 205px;
+	margin-right: 160px;
 }
 .footer_img {
 	padding-left: 30px;
@@ -84,6 +93,11 @@ footer {
 	display: inline-block;
 	margin-right: 320px;
 	margin-left: 15px;
+}
+.header_phone:hover {
+	color:pink;
+	overflow: auto;
+	cursor: pointer;
 }
 .header_buttons {
 	background-color: black;
@@ -139,4 +153,8 @@ margin-right: 15px;
 .button_2_img {
 	vertical-align: bottom;
 	padding-right: 10px;
+}
+.button_1:hover, .button_2:hover, .button_3:hover {
+	background: pink;
+	cursor: pointer;
 }

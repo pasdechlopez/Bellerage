@@ -33,7 +33,30 @@ margin-bottom: 70px;
 .sale_hr, .main_sale_pic {
 	display: inline-block;
 }
+.main_mid {
+	display: flex;
+	padding: 0 15px;
+	flex-wrap: wrap;
+	justify-content: end;
+	flex-direction: column-reverse;
+}
 
+.mid_2 {
+	align-self: baseline;
+	width: 484px;
+order:2;
+
+height: 169px;
+}
+.mid_3, .mid_4 {
+	width: 241px;
+	height: 169px;
+	order: -1;
+}
+.main_mid_1, .main_mid {
+	display: flex;
+	flex-direction: row;
+}
 .main_hot {
 	color: white;
 	text-transform: uppercase;
@@ -43,6 +66,7 @@ margin-bottom: 70px;
 	font-weight: 400;
 	text-align: left;
 	padding: 31px 33px;
+	margin-top: 33px;
 }
 .hot_img {
 	float: right;
@@ -83,9 +107,6 @@ padding-right: 5px;
 	width: 141§px;
 	margin: 0 18px;
 	opacity: 1.0;
-	
-	
-	
 
 }
 
@@ -100,6 +121,7 @@ padding-right: 5px;
 	vertical-align: bottom;
 	margin-top: 33px;
 }
+
 .main_sale_block {
 	width: 220px;
 	display: inline-block;
@@ -275,4 +297,44 @@ padding: 0px 40px 20px 20px;
 	vertical-align: middle;
 	padding-right: 30px;
 	text-align: right;
+}
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+.sprite-abandon {
+    width: 51px;
+    height: 57px;
+    background-position: -5px -5px;
+}
+
+.sprite-addict {
+    width: 83px;
+    height: 31px;
+    background-position: -66px -5px;
+}
+
+.sprite-adidas {
+    width: 57px;
+    height: 47px;
+    background-position: -159px -5px;
+}
+
+.sprite-boy {
+    width: 56px;
+    height: 38px;
+    background-position: -226px -5px;
+}
+
+.sprite-converse {
+    width: 84px;
+    height: 16px;
+    background-position: -292px -5px;
+}
+
+.sprite-klein {
+    width: 98px;
+    height: 19px;
+    background-position: -396px -5px;
 }

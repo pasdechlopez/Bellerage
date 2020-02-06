@@ -3,6 +3,9 @@ var gulp = require('gulp');
 	bsync = require('browser-sync').create();
 	concat = require('gulp-concat');
 	del = require('del');
+	sprity = require('gulp-sprity');
+	sass = require('gulp-sass');
+	gulpif = require('gulp-if');
 
 var htmlFiles = [
 	// './html/head.html',
@@ -67,6 +70,18 @@ function clean_html() {
 function clean_css() {
 	return del(['build/*.css']);
 }
+function sprite()  {
+	return sprity.src({
+	  src: './sprite/**/*.{png,jpg}',
+	  style: './build/sprite.css',
+	  // ... other optional options
+	  // for example if you want to generate scss instead of css
+	//   processor: 'sass', // make sure you have installed sprity-sass
+	})
+	.pipe(gulpif('*.png', gulp.dest('./build/'), gulp.dest('./build/')))
+  };
+
+gulp.task('sprite', sprite);
 
 
 gulp.task('html', html);
