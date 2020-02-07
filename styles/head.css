@@ -40,13 +40,14 @@ footer {
 	color: white;
 	margin: 0 auto;
 	max-width: 760px;
-
-	
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	align-items: center;	
 }
 .footer_container {
 	background-color: black;
 	display: flex;
-	padding-bottom: 30px;
 	justify-content: center;
 
 align-items: baseline;
@@ -58,6 +59,9 @@ align-items: baseline;
 	color: #8d8d8d;
 	text-align: right;
 	padding-right: 15px;
+}
+a:visited {
+	color:white;
 }
 .footer_text_1 {
 	font-size: 11px;	

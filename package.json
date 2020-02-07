@@ -24,6 +24,9 @@
   },
   "dependencies": {
     "del": "^5.1.0",
-    "gulp-if": "^3.0.0"
+    "gulp-if": "^3.0.0",
+    "node-sass": "^4.13.1",
+    "path": "^0.12.7",
+    "sprity": "^1.0.8"
   }
 }

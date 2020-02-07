@@ -6,6 +6,10 @@ var gulp = require('gulp');
 	sprity = require('gulp-sprity');
 	sass = require('gulp-sass');
 	gulpif = require('gulp-if');
+	path = require('path');
+	sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
 
 var htmlFiles = [
 	// './html/head.html',
@@ -54,7 +58,7 @@ function serve() {
 	});
 
 	gulp.watch('./build/**/*.*').on('change', bsync.reload);
-
+	// gulp.watch('./sass/**/*.scss', ['sass']);
 	// gulp.watch('./build/**/*.html', bsync.reload);
 	// gulp.watch('./build/**/*.css', bsync.reload);
 }
@@ -70,19 +74,27 @@ function clean_html() {
 function clean_css() {
 	return del(['build/*.css']);
 }
-function sprite()  {
-	return sprity.src({
-	  src: './sprite/**/*.{png,jpg}',
-	  style: './build/sprite.css',
-	  // ... other optional options
-	  // for example if you want to generate scss instead of css
-	//   processor: 'sass', // make sure you have installed sprity-sass
-	})
-	.pipe(gulpif('*.png', gulp.dest('./build/'), gulp.dest('./build/')))
-  };
+// function fileTypeOf(type) {
+//     return function (file) {
+//         return path.extname(file.path) === '.' + type;
+//     };
+// }
+ 
+// gulp.src("./css/foo.css")
+//     .pipe(sprity())
+//     .pipe(gulpif(fileTypeOf('css'),cleanCSS()))
+//     .pipe(gulp.dest("build"));
 
-gulp.task('sprite', sprite);
-
+// gulp.task('sprites', function () {
+// 	return sprity.src({
+// 	  src: './build/brands/**/*.{png,jpg}',
+// 	  style: './build/sprite.css',
+// 	  // ... other optional options
+// 	  // for example if you want to generate scss instead of css
+// 	//   processor: 'sass', // make sure you have installed sprity-sass
+// 	})
+// 	.pipe(gulpif('*.png', gulp.dest('./build/'), gulp.dest('./build/')))
+//   });
 
 gulp.task('html', html);
 gulp.task('styles', styles);

@@ -82,6 +82,7 @@ vertical-align: top;
 	vertical-align: middle;
 	width: 22px;
 	padding: 15px 17px;
+	cursor: pointer;
 
 }
 
@@ -103,21 +104,23 @@ vertical-align: top;
 	font-weight: 300;
 	font-style: italic;
 	letter-spacing: -0.15px;
-	
+	align-self: center;
+	padding-left: 9px;
+	padding-right: 22px;
 }
 .menu_email {
-	width: 160px;
 	background-color: white;
 	height: 28px;
-	align-self: center;
+	display: flex;
+	cursor: pointer;
 }
 .menu_block {
 	background: #ededed;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	margin-bottom: 33px;
+	justify-content: space-between;
+	padding: 0 15px;
 }
 .menu_menu_plus {
 	width: 26px;
@@ -136,11 +139,12 @@ vertical-align: top;
 .menu_facebook, .menu_pin, .menu_twitter {
 	width: 55px;
 	display: table-cell;
+	vertical-align: bottom;
+	cursor: pointer;
 }
 .main_pics_plus {
-	width: 10px;
-	padding-right: 4px;
-	padding-top: 4px;
+	width: 11px;
+	vertical-align: bottom;
 }
 .menu_find_text {
 	font-family: Arial;
@@ -223,51 +227,4 @@ text-transform: uppercase;
 	position: absolute;
 	top: 210px;
 	left: 75px;
-}
-.main_pic_button {
-	width: 116px;
-
-height: 40px;
-
-box-shadow: 0 3px 0 #dd6b44;
-position: absolute;
-background: #fd926d;
-bottom: 50px;
-left: 140px;
-color: #ffffff;
-
-font-family: Helvetica;
-
-font-size: 12px;
-
-font-weight: 400;
-
-text-transform: uppercase;
-
-}
-.main_pic_block {
-	width: 158px;
-
-height: 7px;
-
-background: #000000;
-position: absolute;
-opacity: 0.2;
-bottom: 5px;
-}
-.main_pic_block:hover {
-opacity: 0.5;
-cursor: grab;
-}
-.dot {
-	width: 10px;
-	height: 10px;
-	background: #867a76;
-	border-radius: 50%;
-	display: inline-block;
-	margin-right: 20px;
-	margin-bottom: 20px;
-}
-.dot:first-child {
-	background-color: #fd926d;
 }
