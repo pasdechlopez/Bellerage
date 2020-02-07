@@ -12,6 +12,13 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: "Socialico";
+	src: url("Socialico.ttf");
+	color: white;
+	font-weight: normal;
+	font-style: normal;
+}
 
 * {
 	margin: 0;
@@ -39,9 +46,7 @@ body {
 footer {
 	color: white;
 	margin: 0 auto;
-	max-width: 760px;
 	display: flex;
-	justify-content: center;
 	background-color: black;
 	align-items: center;	
 }
@@ -49,6 +54,8 @@ footer {
 	background-color: black;
 	display: flex;
 	justify-content: center;
+	max-width: 768px;
+
 
 align-items: baseline;
 }
@@ -77,15 +84,29 @@ a:visited {
 	display: inline;
 	float: left;
 }
+.info_icon:hover {
+	width: 39px;
+	cursor: pointer;
+	margin-bottom: 3px;
+	transition: 10ms;
+}
 
 .menu, .main, header, footer {
 }
- .main_container, .header_container, .footer_container, .menu_container {
-	width: 760px;
+ .main_container,  .footer_container, .menu_container {
+	width: 768px;
 	margin: 0 auto;
 	text-align: center;
 }
-
+.container {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+}
+.pics {
+	background: #fd926d;
+}
 .header_phone {
 	color: white;
 	font-size: 11px;
@@ -103,17 +124,24 @@ a:visited {
 	overflow: auto;
 	cursor: pointer;
 }
-.header_buttons {
+.header_container {
 	background-color: black;
+		text-align: center;
+
+}
+.header_buttons {
 	color:white;
 	text-transform: uppercase;
-	width: 760px;
+	max-width: 768px;
 	font-family: Arial;
 	font-size: 11px;
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: -0.15px;
 	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+
 }
 
 .button_2_img {
@@ -464,16 +492,15 @@ margin-bottom: 70px;
 .main_mid_3_1 {
 	display: flex;
 }
-.
-.main_hot {
+
+.main_hot_new {
 	color: white;
 	text-transform: uppercase;
-	background-color: #f4845d;
 	font-family: Arial;
 	font-size: 30px;
 	font-weight: 400;
 	text-align: left;
-	padding: 31px 33px;
+	padding: 0px 33px;
 	margin-top: 33px;
 	display: flex;
 }
@@ -499,7 +526,7 @@ margin-bottom: 70px;
 }
 
 
-}
+
 
 .hot_img {
 	float: right;
@@ -581,6 +608,8 @@ padding-right: 5px;
 }
 
 .main_wrapper {
+	margin: 0 auto;
+	text-align: center;
 }
 .main_pics_block {
 	display: inline-block;
@@ -596,15 +625,20 @@ padding-right: 5px;
 	vertical-align: bottom;
 	margin-bottom: 35px;
 }
+
+
+  }
 .main_sale_block:hover .sale_img {
 	width: 240px;
 	height: 310px;
+	transform-origin: center;
 }
 .main_sale_block:hover .sale_block_text {
 	width: 240px;
 	height: 105px;
 	padding-bottom: 60px;
 	transition: 2s;
+	transform-origin: center;
 }
 
 
@@ -635,7 +669,7 @@ font-family: Arial;
 	padding-top: 45px;
 }
 .about_payment {
-	width: 760px;
+	width: 768px;
 	background: #f7f7f7;
 	padding: 20px 0;
 }
@@ -668,6 +702,11 @@ line-height: 18px;
 .about_h2 {
 	margin-top: 30px;
 
+}
+.about_wrapper {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
 }
 .about_h {
 	color: #414141;
@@ -702,6 +741,11 @@ padding-top: 30px;
 
 letter-spacing: -0.16px;
 }
+.info_wrapper {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
+}
 .info_p {
 	color: #544f4d;
 
@@ -713,14 +757,22 @@ font-weight: 400;
 text-align: left;
 line-height: 18px;
 }
+.info_p:hover {
+	cursor: pointer;
+}
 .info_block {
 	text-align: left;
 }
-.info {
-	background: #ededed;
+.info_wrapper {
+	max-width: 768px;
 	text-align: left;
 	padding-left: 15px;
 	padding-bottom: 20px;
+}
+.info {
+	background: #ededed;
+	
+	text-align: center;
 }
 .info_1, info_2 {
 	margin-right: 45px;
@@ -765,7 +817,22 @@ padding: 0px 40px 20px 20px;
 	padding-right: 30px;
 	text-align: right;
 }
-.sprite {
+.brands_wrapper {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
+}
+.main_pics {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
+}
+.main_wrapper {
+	width: 768px;
+	margin: 0 auto;
+	text-align: center;
+}
+/* .sprite {
     background-image: url(spritesheet.png);
     background-repeat: no-repeat;
     display: block;
@@ -804,7 +871,7 @@ padding: 0px 40px 20px 20px;
     width: 98px;
     height: 19px;
     background-position: -396px -5px;
-}
+} */
 .main_pic_button {
 	width: 116px;
 
@@ -869,6 +936,9 @@ cursor: grab;
 	display: inline-block;
 	margin-right: 20px;
 	margin-bottom: 20px;
+}
+.dot:hover{
+	cursor: pointer;
 }
 .dot:first-child {
 	background-color: #fd926d;
