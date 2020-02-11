@@ -69,7 +69,6 @@
     display: inline-block;
     width: 20px;
     
-    vertical-align: bottom;
 }
 .menu_search_img:first-child {
     
@@ -138,8 +137,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    max-width: 768px;
-    ;
+    width: 768px;
+    
 }
 
 .menu_menu_plus {

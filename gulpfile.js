@@ -58,7 +58,7 @@ function scss() {
 	return gulp.src(sassFiles)
 	  			.pipe(concat('all.scss'))
 	 			.pipe(sass()) // Using gulp-sass
-	 			.pipe(gulp.dest('./build'))  
+	 			.pipe(gulp.dest('./build'))
 	  			.pipe(bsync.stream());
   };
 
