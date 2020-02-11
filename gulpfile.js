@@ -1,3 +1,4 @@
+
 var gulp = require('gulp');
 	merge = require('gulp-concat');
 	bsync = require('browser-sync').create();
@@ -8,8 +9,7 @@ var gulp = require('gulp');
 	gulpif = require('gulp-if');
 	path = require('path');
 	sass = require('gulp-sass');
-
-sass.compiler = require('node-sass');
+	compiler = require('node-sass');
 
 var htmlFiles = [
 	// './html/head.html',
@@ -47,6 +47,20 @@ function styles() {
 // function script() {
 	
 // }
+var sassFiles = [
+	'./styles/head.scss',
+	// './styles/header.css',
+	'./styles/about.scss',
+	'./styles/main.scss',
+	// './styles/footer.css'
+]
+function scss() {
+	return gulp.src(sassFiles)
+	  			.pipe(concat('all.scss'))
+	 			.pipe(sass()) // Using gulp-sass
+	 			.pipe(gulp.dest('./build'))  
+	  			.pipe(bsync.stream());
+  };
 
 function serve() {
 
@@ -58,6 +72,8 @@ function serve() {
 	});
 
 	gulp.watch('./build/**/*.*').on('change', bsync.reload);
+	// gulp.watch('./build/**/*.scss').on('change', bsync.reload);
+
 	// gulp.watch('./sass/**/*.scss', ['sass']);
 	// gulp.watch('./build/**/*.html', bsync.reload);
 	// gulp.watch('./build/**/*.css', bsync.reload);
@@ -66,6 +82,8 @@ function serve() {
 function sync() {
 	gulp.watch('./html/**/*.html', html);
 	gulp.watch('./styles/**/*.css', styles);
+	gulp.watch('./styles/**/*.scss', scss);
+	// gulp.watch('./build/**/*.scss', sass);
 }
 
 function clean_html() {
@@ -74,37 +92,10 @@ function clean_html() {
 function clean_css() {
 	return del(['build/*.css']);
 }
-// function fileTypeOf(type) {
-//     return function (file) {
-//         return path.extname(file.path) === '.' + type;
-//     };
-// }
- 
-// gulp.src("./css/foo.css")
-//     .pipe(sprity())
-//     .pipe(gulpif(fileTypeOf('css'),cleanCSS()))
-//     .pipe(gulp.dest("build"));
 
-// gulp.task('sprites', function () {
-// 	return sprity.src({
-// 	  src: './build/brands/**/*.{png,jpg}',
-// 	  style: './build/sprite.css',
-// 	  // ... other optional options
-// 	  // for example if you want to generate scss instead of css
-// 	//   processor: 'sass', // make sure you have installed sprity-sass
-// 	})
-// 	.pipe(gulpif('*.png', gulp.dest('./build/'), gulp.dest('./build/')))
-//   });
-
+gulp.task('scss', scss);
 gulp.task('html', html);
 gulp.task('styles', styles);
-// gulp.task('script', script);
-// gulp.task('watch', watch);
-// gulp.task('bsync', function() {
-// 	bsync.init( {
-// 		baseDir: "./"
-// 	});
-// });
 gulp.task('clean_html', clean_html);
 gulp.task('clean_css', clean_css);
-gulp.task('build', gulp.series(clean_html, clean_css, html, styles, gulp.parallel(serve, sync)));
+gulp.task('build', gulp.series(clean_html, clean_css, html, scss,  gulp.parallel(serve, sync)));
