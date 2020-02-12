@@ -23,6 +23,11 @@
     font-style: normal;
 }
 
+.mid_hidden,
+.min_hidden {
+    display: none;
+}
+
 * {
     margin: 0;
 }
@@ -61,10 +66,9 @@ footer {
 }
 
 .footer_container {
-    background-color: black;
     display: flex;
-    justify-content: center;
-    max-width: 768px;
+    justify-content: space-between;
+    width: 768px;
 
 
     align-items: baseline;
@@ -133,7 +137,6 @@ a {
     letter-spacing: -0.15px;
     font-family: Arial;
     display: flex;
-    margin-right: 320px;
     margin-left: 15px;
 
 }
@@ -146,12 +149,13 @@ a {
 .header_container {
     background-color: black;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .header_buttons {
     color: white;
     text-transform: uppercase;
-    max-width: 768px;
     height: 30px;
     font-family: Arial;
     font-size: 11px;
@@ -159,9 +163,7 @@ a {
     text-transform: uppercase;
     letter-spacing: -0.15px;
     display: flex;
-    margin: 0 auto;
     align-items: center;
-
 }
 
 .button_2_img {
