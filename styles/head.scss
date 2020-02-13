@@ -56,6 +56,9 @@ body {
 footer {
     height: 80px;
 }
+a.footer_links:hover {
+    color: pink;
+}
 
 footer {
     color: white;
@@ -111,11 +114,13 @@ a {
 
 .main_container,
 .footer_container,
-.menu_container {
+{
     width: 768px;
     margin: 0 auto;
     text-align: center;
 }
+
+
 
 .container {
     width: 768px;
@@ -150,7 +155,7 @@ a {
     background-color: black;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header_buttons {
@@ -170,20 +175,17 @@ a {
     width: 14px;
 }
 
-.button_1_text {
-    float: left;
-    padding-right: 14px;
-}
+
 
 .button_1,
 .button_2,
 .button_3 {
-    vertical-align: middle;
     height: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .button_text {
-    padding-top: 7px;
 }
 
 .button_1 {
@@ -195,7 +197,9 @@ a {
 
 .button_1_img {
     vertical-align: middle;
-    width: 10px;
+    width: 6px;
+    height: 4px;
+    margin-left: 10px;
 }
 
 .button_2 {
@@ -209,11 +213,11 @@ a {
     padding-left: 15px;
     padding-right: 15px;
     border-right: 1px solid grey;
-    margin-right: 15px;
 }
 
 .button_3_img {
     width: 15px;
+    height: 15px;
 }
 
 .button_2_img {
