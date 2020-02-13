@@ -23,6 +23,7 @@
     "sprity-sass": "^1.0.4"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "del": "^5.1.0",
     "gulp-if": "^3.0.0",
     "node-sass": "^4.13.1",

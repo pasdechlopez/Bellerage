@@ -668,6 +668,12 @@ mid_hidden {
   padding-top: 20px;
   position: relative; }
 
+.sale_label {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 40px; }
+
 .img_hidden {
   position: absolute;
   top: 70px;
@@ -1006,7 +1012,7 @@ info_2 {
   background-repeat: no-repeat; }
 
 .sprite {
-  background-image: url("css_sprites.png");
+  background-image: url("css_sprite.png");
   width: 80px;
   height: 85px;
   display: inline-block;
@@ -1033,35 +1039,25 @@ info_2 {
   background: url("css_sprites.png") -75px -67px; }
 
 .bg_converse {
-  background-position: -337px 19px;
-  width: 85px; }
+  background-position: -422px 19px;
+  width: 100px; }
 
 .bg_klein {
   width: 98px;
   background: url("css_sprites.png") -441px 14px; }
 
+.bg_edwin {
+  width: 98px;
+  background-position: -220px 16px; }
+
+.bg_grenson {
+  width: 140px;
+  background-position: -648px 16px; }
+
 @media screen and (min-width: 100px) and (max-width: 767px) {
-  .menu_pic,
-  .menu_pic_wrapper,
-  .mid_wrapper,
-  .main_container,
-  .footer_text_1,
-  .about_shop,
-  .brands_wrapper,
-  .brands,
-  .info,
-  .sprite_1,
-  .info_wrapper,
-  .menu_dots,
-  .about_payment,
-  .main_sale_img,
-  .main_hot_new,
-  .main_hot,
+  .hidden,
   .menu_search:first-child,
-  .main_left,
-  .main_sale_block:last-child,
-  .updated,
-  .img_hidden {
+  .main_sale_block:last-child {
     display: none; }
   .header_container {
     flex-direction: column; }
@@ -1160,7 +1156,7 @@ info_2 {
     width: 253px; }
   .main_pics_plus {
     width: 37px;
-    padding-top: 26px; }
+    height: 37px; }
   .main_pics_button_text {
     margin-right: 10px;
     margin-left: 20px;
@@ -1175,6 +1171,7 @@ info_2 {
     cursor: pointer; }
   .add_plus {
     width: 17px;
+    height: 17px;
     padding-top: 0px;
     margin-right: 24px; }
   .menu_email_text {
@@ -1254,7 +1251,8 @@ info_2 {
     width: 100%; }
   .menu_logo {
     margin: 60px 140px;
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+    min-width: 358px; }
   .main_load {
     width: 220px;
     background-color: #000000;
@@ -1329,10 +1327,13 @@ info_2 {
     justify-content: space-around;
     font-size: 30px;
     align-items: center; }
-  .button_3, .button_1 {
+  .button_3,
+  .button_1 {
     border: none;
     height: 96px; }
-  .button_3, .button_1, .button_2 {
+  .button_3,
+  .button_1,
+  .button_2 {
     height: 96px; }
   .button_2 {
     padding: 0 60px; }
@@ -1380,13 +1381,10 @@ info_2 {
     width: 1200px; }
   .menu_menu {
     display: none; }
-  .main_pics {
-    width: 1800px; }
   .disp {
     display: flex;
     align-items: center;
-    width: 1200px;
-    justify-content: flex-start; }
+    justify-content: center; }
   .arrow_down {
     width: 7px;
     height: 4px;
@@ -1436,7 +1434,8 @@ info_2 {
   .map_text {
     margin-right: 30px; }
   .map_text:hover {
-    color: pink; }
+    color: pink;
+    cursor: pointer; }
   .menu_logo {
     margin-right: 179px;
     margin-top: 25px;
@@ -1449,13 +1448,12 @@ info_2 {
   .main_lef {
     padding-right: 5px; }
   .header_buttons {
-    justify-content: center;
-    flex-grow: 1; }
+    justify-content: center; }
   .header_container {
     justify-content: space-around; }
   .sprite_1 {
     width: 1200px;
-    justify-content: center; }
+    justify-content: space-evenly; }
   .container,
   .main_sale_img {
     width: 1200px; }
@@ -1463,8 +1461,6 @@ info_2 {
     height: 167px; }
   .about_p {
     padding: 27px 115px; }
-  .main_hot {
-    width: 1200px; }
   .footer_container {
     justify-content: center; }
   .main_hot_new {
@@ -1476,6 +1472,8 @@ info_2 {
   .sprite:nth-child(8) {
     display: block; }
   .main_pics {
-    width: 1100px; }
+    width: 1800px; }
   .header_mobile {
-    margin-left: 117px; } }
+    margin-left: 117px; }
+  .main_girls {
+    width: 1100px; } }
