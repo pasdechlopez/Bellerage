@@ -8,15 +8,15 @@
     color: #000000;
     font-size: 28px;
     letter-spacing: -0.75px;
-    margin-bottom: 30px;
 }
 
 .menu_logo {
-    display: inline-block;
+    display: flex;
     text-align: left;
     margin-right: 368px;
     margin-left: 15px;
     vertical-align: middle;
+    align-self: center;
 }
 
 .menu_logo_img {
@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 7px;
+    padding: 0 10px;
 }
 .menu_search:first-child {
     border-bottom: none;
@@ -99,9 +99,13 @@
 }
 
 .disp {
-    text-align: center;
+    display: flex;
+    align-items: end;
+    justify-content: center;
 }
-
+a.header_tel {
+    color:white;
+}
 
 .menu_menu_text {
     color: white;
@@ -195,6 +199,8 @@ justify-content: center;
 .menu_twitter:hover {
     background: pink;
     font-size: 31px;
+    color: #6b6b6b;
+
 }
 .pics_back {
     background: #fd926d;
@@ -341,7 +347,7 @@ background-color: #f2f2f2;
     display: flex;
     margin-left: 78px;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .button_main_right {

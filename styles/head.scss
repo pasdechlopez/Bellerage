@@ -59,6 +59,9 @@ footer {
 a.footer_links:hover {
     color: pink;
 }
+.footer_links {
+    white-space: nowrap;
+}
 
 footer {
     color: white;
@@ -84,6 +87,7 @@ footer {
     color: #8d8d8d;
     text-align: right;
     padding-right: 15px;
+    white-space: nowrap;
 }
 
 a:visited {
@@ -145,11 +149,14 @@ a {
     margin-left: 15px;
 
 }
-
-.header_phone:hover {
-    color: pink;
-    cursor: pointer;
+a:visited {
+    color:white;
 }
+a:hover {
+    color:pink;
+}
+
+
 
 .header_container {
     background-color: black;
@@ -228,6 +235,6 @@ a {
 .button_1:hover,
 .button_2:hover,
 .button_3:hover {
-    background: pink;
+    background-color: pink;
     cursor: pointer;
 }
