@@ -30,7 +30,8 @@
 
 html,
 body {
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
 
 body {
   margin: 0 auto; }
@@ -1268,7 +1269,8 @@ info_2 {
     display: inline;
     width: 640px;
     margin: 0 auto;
-    padding: 0; }
+    padding: 0;
+    box-sizing: border-box; }
   .main_rect {
     width: 158px;
     height: 27px;
@@ -1398,7 +1400,8 @@ info_2 {
   .menu_block {
     display: flex;
     flex-direction: column;
-    padding: 0; }
+    padding: 0;
+    box-sizing: border-box; }
   .menu_email {
     margin: 0; }
   .wrapper {
@@ -1489,7 +1492,8 @@ info_2 {
   .menu_container {
     width: 100%; }
   .menu_block {
-    justify-content: center; }
+    justify-content: center;
+    box-sizing: border-box; }
   .menu_email {
     margin-right: 220px; }
   .mid_1,
@@ -1542,7 +1546,8 @@ info_2 {
   .sprite:nth-child(8) {
     display: block; }
   .main_pics {
-    width: 1800px; }
+    width: 1800px;
+    overflow: hidden; }
   .header_mobile {
     margin-left: 117px; }
   .main_girls {

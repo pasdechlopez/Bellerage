@@ -1038,6 +1038,8 @@ height: 350px;
         width: 640px;
         margin: 0 auto;
         padding: 0;
+        box-sizing: border-box;
+        
     }
     .main_rect {
         width: 158px;
@@ -1101,6 +1103,7 @@ z-index: 1;
     .main_pics {
         width: 640px;
     }
+
 
     .menu_logo_img {
         width: 102px;
@@ -1244,6 +1247,8 @@ z-index: 1;
         display: flex;
         flex-direction: column;
         padding: 0;
+        box-sizing: border-box;
+
     }
 
     .menu_email {
@@ -1411,6 +1416,8 @@ z-index: 1;
 
     .menu_block {
         justify-content: center;
+        box-sizing: border-box;
+
     }
 
     .menu_email {
@@ -1522,6 +1529,7 @@ z-index: 1;
 
     .main_pics {
         width: 1800px;
+        overflow: hidden;
     }
 
     .header_mobile {
