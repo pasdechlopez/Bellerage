@@ -176,6 +176,10 @@ mid_hidden {
 .main_pics:first-child {
     background: #fd926d;
 }
+.main_text {
+    width: 252px;
+height: 126px;
+}
 
 .updated {
     color: #6b6b6b;
@@ -1547,6 +1551,9 @@ z-index: 1;
         }
         .main_text {
             margin-bottom: 10px;
+            width: 341px;
+
+height: 143px;
         }
         .sale_hr_max_1, .sale_hr_max_2 {
             width: 2000px;
