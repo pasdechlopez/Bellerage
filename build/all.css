@@ -122,7 +122,8 @@ a {
   letter-spacing: -0.15px;
   font-family: Arial;
   display: flex;
-  margin-left: 15px; }
+  margin-left: 15px;
+  white-space: nowrap; }
 
 a:visited {
   color: white; }
@@ -1126,6 +1127,8 @@ info_2 {
     font-size: 30px; }
   .footer {
     height: 108px; }
+  .header_phone {
+    padding: 37px 10px; }
   .main_pics {
     position: relative;
     padding-bottom: 220px; }
