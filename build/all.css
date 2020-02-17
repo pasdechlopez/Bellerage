@@ -205,7 +205,7 @@ a:hover {
 .menu_logo {
   display: flex;
   text-align: left;
-  margin-right: 368px;
+  margin-right: 388px;
   margin-left: 15px;
   vertical-align: middle;
   align-self: center; }
@@ -487,7 +487,7 @@ a.header_tel {
   display: flex;
   margin-left: 78px;
   flex-direction: column;
-  margin-top: 60px; }
+  margin-top: 30px; }
 
 .button_main_right {
   right: 0; }
@@ -897,7 +897,7 @@ info_2 {
 
 .info_100 {
   vertical-align: top;
-  padding-top: 35px; }
+  padding-top: 25px; }
 
 .brands_text {
   color: #414141;
@@ -1223,7 +1223,8 @@ info_2 {
     height: 90px;
     display: flex;
     justify-content: center;
-    font-size: 40px; }
+    font-size: 40px;
+    color: #6b6b6b; }
     .menu_twitter:nth-child(2n + 1),
     .menu_pin:nth-child(2n + 1),
     .menu_facebook:nth-child(2n + 1) {
@@ -1235,7 +1236,7 @@ info_2 {
     .menu_twitter:hover,
     .menu_pin:hover,
     .menu_facebook:hover {
-      background-color: pink;
+      background: pink;
       font-size: 40px;
       color: #6b6b6b; }
   .find_icon {
@@ -1439,7 +1440,9 @@ info_2 {
     margin-top: 10px;
     align-self: center; }
   .footer_img:hover {
-    cursor: pointer; } }
+    cursor: pointer; }
+  .info_100 {
+    padding-bottom: 20px; } }
 
 @media screen and (min-width: 1200px) {
   .footer_container {
@@ -1564,4 +1567,6 @@ info_2 {
     height: 440px; }
   .main_left {
     margin-top: 60px;
-    align-self: unset; } }
+    align-self: unset; }
+  .info_100 {
+    padding-top: 25px; } }

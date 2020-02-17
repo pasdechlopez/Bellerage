@@ -492,7 +492,7 @@ info_2 {
 
 .info_100 {
     vertical-align: top;
-    padding-top: 35px;
+    padding-top: 25px;
 }
 
 .brands_text {
@@ -978,6 +978,8 @@ height: 350px;
         display: flex;
         justify-content: center;
         font-size: 40px;
+        color: #6b6b6b;
+
 
         &:nth-child(2n + 1) {
             background-color: #f7f7f7;
@@ -988,7 +990,7 @@ height: 350px;
         }
 
         &:hover {
-            background-color: pink;
+            background: pink;
             font-size: 40px;
             color: #6b6b6b;
         }
@@ -1314,6 +1316,10 @@ z-index: 1;
 .footer_img:hover {
     cursor: pointer;
 }
+.info_100 {
+    padding-bottom: 20px;
+
+}
 
 
 
@@ -1555,6 +1561,10 @@ z-index: 1;
         .main_left {
             margin-top: 60px;
             align-self: unset;
+        }
+        .info_100 {
+            padding-top: 25px;
+
         }
 
 
