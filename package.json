@@ -1,0 +1,26 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "wodje",
+  "main": "index.js",
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "f"
+  ],
+  "author": "DK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "joi": "^14.3.1",
+    "path": "^0.12.7",
+    "util": "^0.12.2",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

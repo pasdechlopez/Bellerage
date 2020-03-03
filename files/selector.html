@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/files/selector.css">
+    
+    <script src="/files/selector.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <!-- <div id="top-selector" class="top-selector" data-render="123" >
+       
+    </div> -->
+
+    <select id="top-selector">
+        <option value="1"><a>option1</a></option>
+        <option value="2"><div>option2</span></option>
+        <option value="3">option3</option>
+        <option value="4">option4</option>
+    </select>
+
+
+    <script>
+        window.onload  = function() {
+            superSelector("#top-selector", {type: "input", items: [{name: "option1", value: "1"}, {name: "option2", value: "2"}, {name: "option3", value: "3"}]});
+
+            // const x = {
+            //     key: "value"
+            // }
+
+            // const y = {
+            //     name: '213',
+            //     value: '23'
+            // },
+        }
+    </script>
+        
+</body>
+</html>
