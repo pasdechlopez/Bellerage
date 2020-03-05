@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/files/selector.css">
-    
+
     <script src="/files/selector.js" type="text/javascript" defer></script>
 </head>
 
@@ -15,16 +16,20 @@
     </div> -->
 
     <select id="top-selector">
-        <option value="1"><a>option1</a></option>
-        <option value="2"><div>option2</span></option>
-        <option value="3">option3</option>
-        <option value="4">option4</option>
+        <option value="1">raz</option>
+        <option value="2">dva</option>
+        <option value="3">tri</option>
+        <option value="4">chetyre</option>
     </select>
 
 
     <script>
-        window.onload  = function() {
-            superSelector("#top-selector", {type: "input", items: [{name: "option1", value: "1"}, {name: "option2", value: "2"}, {name: "option3", value: "3"}]});
+        window.onload = function () {
+            // superSelector("#top-selector", [{name: "raz", value: "1"}, {name: "dva", value: "2"}, {name: "tri", value: "3"}], {type: "input"});
+            superSelector("#top-selector", {
+                type: "multi", 
+                onChange: (values) => console.log('SUBMITTED VALUES', values)
+            });
 
             // const x = {
             //     key: "value"
@@ -36,6 +41,7 @@
             // },
         }
     </script>
-        
+
 </body>
+
 </html>
