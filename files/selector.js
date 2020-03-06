@@ -1,22 +1,23 @@
-
 const superSelector = (function () {
 
   'use strict';
 
   const body = document.querySelector('body');
   const TYPE_MULTI = "multi";
-  const TYPE_DEFAULT = "default";
+  const TYPE_DEFAULT = "default"; //type to options block 
   const TYPE_INPUT = "input";
 
-  const _selector = _create('div', body, {
-    id: "select"
-  });
-  const select__dropdown = _create('div', _selector, {
-    className: "select__dropdown"
-  });
-  let _anchor = null;
-  let arrayValues = [];
-  let checkboxValues = [];
+  let _anchor = null; //link to the user's html node 
+  let _wrapper = null;
+  let _selector = null;
+  let _dropdown = null;
+  let _searchInput = null;
+  let _optionsContainer = null;
+
+  let _dropdownOpen = true;
+
+  let arrayValues = []; //submitted values
+  let checkboxValues = []; //clicked values
 
   const DEFAULT_PARAMS = {
     type: TYPE_DEFAULT,
@@ -27,22 +28,22 @@ const superSelector = (function () {
   let _items = [];
   let _classes = {};
   let _onChange = () => {};
-  let _params = DEFAULT_PARAMS;
+  let _params = DEFAULT_PARAMS; //default params
 
-  function parseAnchorElement() {
+  // parses html for an option block' text and value 
+  function parseAnchorElement() { 
     if (_anchor instanceof HTMLSelectElement) {
       for (let i = 0; i < _anchor.children.length; i++) {
         if (_anchor.children[i] instanceof HTMLOptionElement) {
           _items.push({
             name: _anchor.children[i].innerHTML,
             value: _anchor.children[i].getAttribute("value")
-          });
+          })
         }
       }
 
-      return _items;
+      return _items
     } else {
-      console.log("False")
     };
   };
 
@@ -56,13 +57,9 @@ const superSelector = (function () {
     }
   };
 
-  function initializeParams(params = {}) {
-    // let _classes = {
-    //   ..._classes,
-    // };
-    console.log("params:",params);
-
-    if (typeof params === "object" && !Array.isArray(params)) {
+  //validation of user's params
+  function _initializeParams(params = {}) {
+    if (typeof params === 'object' && !Array.isArray(params)) {
       const {
         items,
         classes,
@@ -84,11 +81,12 @@ const superSelector = (function () {
     }
   };
 
+  //creates an element required
   function _create(tag, parent, params = {}) {
-    let element = document.createElement(tag);
+    const element = document.createElement(tag);
 
-    if (typeof params === "object" && !Array.isArray(params)) {
-      for (let key in params) {
+    if (typeof params === 'object' && !Array.isArray(params)) {
+      for (const key in params) {
         element[key] = params[key];
       }
     } else {
@@ -100,59 +98,59 @@ const superSelector = (function () {
     return element;
   };
 
+ //creates UI button element with a moving arrow (status indicator)
+  function _createSelector() {
 
-  function _createButton() {
-
-    const buttonWrapper = _create("div", null, {
+    _selector = _create("div", null, {
       className: "button-wrapper"
     });
-    const buttonWrapper__buttonText = _create("div", buttonWrapper, {
+
+    const buttonWrapper__buttonText = _create("div", _selector, {
       className: "button-wrapper__button-text"
     });
+
     _create("span", buttonWrapper__buttonText, {
       innerHTML: "Не выбрано"
     });
-    const buttonWrapper__buttonArrow = _create("div", buttonWrapper, {
+
+    const buttonWrapper__buttonArrow = _create("div", _selector, {
       className: "button-wrapper__button-arrow"
     });
+
     _create("img", buttonWrapper__buttonArrow, {
       className: "button-wrapper__button-arrow-img",
       src: "/files/arrow.png"
     });
-    buttonWrapper.onclick = toggle;
-    return buttonWrapper;
+
+    _selector.onclick = toggle;
   };
 
-  function _options(items = _items) {
-    // arrayValues = [];
-    
-    let dropdown__optionBlock = document.querySelector(".select__dropdown__option-block"); 
-    dropdown__optionBlock.innerHTML = "";
+  //creates a list of blocks of options elements  
+  function _optionsCreate(items = _items) {
+    _optionsContainer.innerHTML = "";
     if (_params.type === TYPE_DEFAULT) {
       for (let i = 0; i < items.length; i++) {
-        const select__dropdown__optionBlock__option = _create('div', dropdown__optionBlock, {
+        const optionBlock__option = _create('div', _optionsContainer, {
           className: "select__dropdown__option-block__option",
-         
         });
-        select__dropdown__optionBlock__option.addEventListener("click", function () {
+        optionBlock__option.addEventListener("click", function () {
           document.querySelector(".button-wrapper__button-text").innerHTML = `${items[i].name}`;
-          toggle();
-          _onChange(items[i].value);
         });
-        const option = _create("span", select__dropdown__optionBlock__option, {
+        const option = _create("span", optionBlock__option, {
           href: "custom",
           innerHTML: `${items[i].name}`,
           className: "option"
         });
       }
+
     } else if (_params.type === TYPE_MULTI) {
       for (let i = 0; i < items.length; i++) {
-        const select__dropdown__optionBlock__option = _create('div', dropdown__optionBlock, {
+        const optionBlock__option = _create('div', _optionsContainer, {
           className: "select__dropdown__option-block__option"
         });
-    
-        const select__checkboxLabel = _create("label", select__dropdown__optionBlock__option, {
-          className:"select__container-checkbox"
+
+        const select__checkboxLabel = _create("label", optionBlock__option, {
+          className: "select__container-checkbox"
         });
         const checkbox = _create("input", select__checkboxLabel, {
           type: "checkbox",
@@ -164,97 +162,59 @@ const superSelector = (function () {
         _create("span", select__checkboxLabel, {
           className: "checkmark"
         });
-        const option = _create("span", select__dropdown__optionBlock__option, {
+        _create("span", optionBlock__option, {
           href: "custom",
           innerHTML: `${items[i].name}`,
           className: "option"
         });
-         checkbox.checked = checkboxValues.includes(items[i].value);
-        select__dropdown__optionBlock__option.addEventListener("click", function () {
-         
+        checkbox.checked = checkboxValues.includes(items[i].value);
+        optionBlock__option.addEventListener("click", function () {
           checkbox.checked ? checkbox.checked = false : checkbox.checked = true;
-          checkboxValues = checkboxValues.includes(items[i].value) ? checkboxValues.filter(value => items[i].value !== value) : [...checkboxValues, items[i].value]; 
-
-          // checkboxValues.includes(items[i].value) ? checkboxValues.filter(function () ) : checkboxValues.push(items[i].value);
-          console.log(checkboxValues);
-          // (checkbox.checked = false && buttonText.innerHTML.includes(` ${items[i].name}`)  ? buttonText.innerHTML.replace(` ${items[i].name}`)
-        
+          checkboxValues = checkboxValues.includes(items[i].value) ? checkboxValues.filter(value => items[i].value !== value) : [...checkboxValues, items[i].value];
         });
       }
-      const select__optionSelect__dropdown__optionBlock__submit = _create("button", dropdown__optionBlock, {
-        innerHTML: "Submit",
-        className: "select__dropdown__option-block__submit"
-      });
-      select__optionSelect__dropdown__optionBlock__submit.addEventListener("click", function () {
-        toggle();
-        let buttonText = document.querySelector(".button-wrapper__button-text");
-        const checkboxes = document.querySelectorAll(".select__container-checkbox__checkbox");
-        buttonText.innerHTML = "";
+      _createSubmit()
+    }
+    return;
+  }
 
-        for (let i = 0; i < checkboxes.length; i++) {
-          if (checkboxes[i].checked) {
-            arrayValues.push(items[i].value);
-            // console.log(items[i].value);
-            buttonText.innerHTML += ` ${items[i].name}`;
-          }
+  
+//creates submit button
+  function _createSubmit(items = _items) {
+    let optionBlock__submit = _create("button", _optionsContainer, {
+      innerHTML: "Submit",
+      className: "select__dropdown__option-block__submit"
+    });
+    optionBlock__submit.addEventListener("click", function () {
+      toggle();
+      let buttonText = document.querySelector(".button-wrapper__button-text");
+      const checkboxes = document.querySelectorAll(".select__container-checkbox__checkbox");
+      buttonText.innerHTML = "";
+
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          arrayValues.push(items[i].value);
+          // console.log(items[i].value);
+          buttonText.innerHTML += ` ${items[i].name}`;
         }
-        // arrayValues.includes(items[i].value)  ? console.log(false) : arrayValues.push(items[i].value);
-        // buttonText.innerHTML.includes(items[i].name) ? false : buttonText.innerHTML += ` ${items[i].name}`;
-        _onChange(arrayValues);
-        // arrayValues = [];
-        // for (let i = 0; i < checkboxes.length; i++) {
-        //   checkboxes[i].checked = false;
-
-        // }
-
-      });
-    }
-
-    // else if (_params.type === TYPE_INPUT) {
-
-    //   const input = _create("input", dropdown__optionBlock, {
-    //     type: "text",
-    //     placeholder: "write your option",
-    //     className: "submitText"
-    //   });
-    //   // const a = _create("span", select__dropdown__optionBlock__option, {href: "custom", innerHTML: "Custom", id: "hide", className: "hide"});
-    //   const select__optionSelect__dropdown__optionBlock__submit = _create("buttonWrapper__buttonText", dropdown__optionBlock, {
-    //     innerHTML: "Submit",
-    //     className: "select__dropdown__option-block__submit"
-    //   });
-    //   select__optionSelect__dropdown__optionBlock__submit.addEventListener("click", function () {
-    //     input.value = "";
-    //     input.placeholder = "Thank you!";
-    //     setTimeout(function () {
-    //       select__dropdown.style.display = "none";
-    //     }, 1000);
-    //   });
-    // }
-
-    return ;
+      }
+      _onChange(arrayValues)
+    })
   }
 
-  function _search() {
-    if (_params.type === TYPE_DEFAULT || _params.type === TYPE_MULTI) {
-      const search = _create("input", select__dropdown, {
-        type: "text",
-        placeholder: "Search..",
-        className: "select__dropdown__search hide",
-        id: "select__dropdown__search",
-        oninput: "filterFunction()"
-      });
-      console.log(_searchFilter);
-      search.oninput = _searchFilter;
-      return search;
-
-    } else {
-      return;
-    }
+  function _createSearchInput() {
+    _searchInput = _create("input", _dropdown, {
+      type: "text",
+      placeholder: "Search..",
+      className: "select__dropdown__search hide",
+      id: "select__dropdown__search",
+      oninput: _filterItems
+    });
   }
 
-  function _searchFilter(event) {
+  function _filterItems(event) {
     const searchValue = event.target.value;
-    let itemsToRender;
+    let itemsToRender = undefined;
 
     if (searchValue) {
       const searchRegEx = new RegExp(`^${searchValue}`, 'i');
@@ -265,203 +225,90 @@ const superSelector = (function () {
         } = item;
         return searchRegEx.test(name);
       })
-
-      // console.log(filteredItems);
-      // itemsToRender = filteredItems
-      // _renderDropdown(filteredItems);
     }
-    // else {
-    //   _dropdownRefresh();
-    // }
 
-    _options(itemsToRender);
+    _optionsCreate(itemsToRender);
   }
-  
 
+  function _addDropdownCloseListeners() {
+    _dropdown.addEventListener('click', event => event.stopPropagation())
+    document.addEventListener('click', _closeDropdown)
+  }
 
-  // function _renderDropdown(items = _items) {
-  //   // let select__dropdown__optionBlock__option = document.querySelectorAll(".select__dropdown__optionBlock__option");
-  //   // let dropdown__optionBlock = document.querySelector(".select__dropdown__option-block");
-  //   if (items.length !== 0) {
-  //     console.log(items.length);
-  //     if (_params.type === TYPE_DEFAULT) {
-  //       dropdown__optionBlock.remove();
+  function _createWrapper() {
+    _wrapper = _create('div', body, {
+      className: 'tds'
+    })
+  }
 
-  //       for (let i = 0; i < items.length; i++) {
-  //         let dropdown__optionBlock = _create('div', dropdown__optionBlock, {
-  //           className: "select__dropdown__option-block"
-  //         });
-  //         let select__dropdown__optionBlock__option = _create("span", dropdown__optionBlock, {
-  //           href: "custom",
-  //           innerHTML: `${items[i].name}`,
-  //           className: "select__dropdown__option-block__option"
-  //         });
-  //         select__dropdown__optionBlock__option.addEventListener("click", function () {
-  //           document.querySelector(".button-wrapper__button-text").innerHTML = `${items[i+1].name}`;
-  //           select__dropdown.style.display = "none";
-  //           document.querySelector(".buttonWrapper__buttonArrow").style.transform = "rotate(0.5turn)";
-  //           // _renderDropdown();
+  function _createOptions() {
+    _optionsContainer = _create('div', _dropdown, {
+      className: 'select__dropdown__option-block'
+    })
 
-  //           document.querySelector("#select__dropdown__search").value = "";
-  //         });
-          
-  //       }
-  //     } 
+    _optionsCreate()
+  }
 
-  //     if (_params.type === TYPE_MULTI) {
-  //       dropdown__optionBlock.style.display = "none";
-  //       let select__dropdown__optionBlock__option = _create('div', select__dropdown, {
-  //         className: "select__dropdown__option-block__option"
-  //       });
-  //       for (let i = 0; i < items.length; i++) {
-  //         const select__dropdown__optionBlock__option = _create('div', dropdown__optionBlock, {
-  //           className: `select__dropdown__option-block__option`
-  //         });
-  //         select__dropdown__optionBlock__option.addEventListener("click", function () {
-  //           document.querySelector(".button-wrapper__button-text").innerHTML = `${items[i].name}`;
-  //           select__dropdown.style.display = "none";
-  //           document.querySelector(".buttonWrapper__buttonArrow").style.transform = "rotate(0.5turn)";
-  //           _renderDropdown();
-  //           document.querySelector("#select__dropdown__search").value = "";
-  //         });
-  //         const option = _create("span", select__dropdown__option-block__option, {
-  //           href: "custom",
-  //           innerHTML: `${items[i].name}`,
-  //           className: "select__dropdown__option-block__option"
-  //         });
-  //       }
-  //       const select__optionSelect__dropdown__optionBlock__submit = _create("buttonWrapper__buttonText", dropdown__optionBlock, {
-  //         innerHTML: "Submit",
-  //         className: "select__dropdown__option-block__submit"
-  //       });
-  //       select__optionSelect__dropdown__optionBlock__submit.addEventListener("click", function () {
-  //         select__dropdown.style.display = "none";
-  //         let checkboxes = document.querySelectorAll(".check");
-  //         document.querySelector(".select__dropdown__search").value = "";
-  //         for (let i = 0; i < checkboxes.length; i++) {
-  //           checkboxes[i].checked = false;
+  function _createDropdown() {
+    _dropdown = _create('div', _wrapper, {
+      className: 'select__dropdown'
+    })
 
-  //         }
-  //       });
-  //     }
+    _createSearchInput()
+    _createOptions()
+    _addDropdownCloseListeners()
+  }
 
-  //   } else if (items.length === 0) {
-  //     // document.querySelector(".select__dropdown__optionBlock__submit") ? document.querySelector(".select__dropdown__optionBlock__submit").remove() : console.log("j");
-  //     let dropdown__optionBlock = document.querySelector(".select__dropdown__option-block");
-
-  //     dropdown__optionBlock ? dropdown__optionBlock.remove(): false;
-      
-  //   }
-
-  // }
-
-  function _hideSeek() {
-    select__dropdown.addEventListener('click', event => event.stopPropagation());
-    document.addEventListener('click', function() {
-      select__dropdown.className.includes("select__dropdown_hide") ? false : toggle();
-      _onChange(arrayValues);
-       let search = document.querySelector(".select__dropdown__search");
-
-        search.value = "";
-        let buttonText = document.querySelector(".button-wrapper__button-text");
-        const checkboxes = document.querySelectorAll(".select__container-checkbox__checkbox");
-        // for (let i = 0; i < arrayValues.length; i++) {
-        //   if (arrayValues) {
-            
-        //   }
-        // }
-        checkboxValues = [...arrayValues];
-        _options();
-
-    });
+  function _initializeSelector() {
+    _createWrapper()
+    _createSelector()
+    _createDropdown()
   }
 
   function _render() {
-    _selector.appendChild(_createButton());
-    _selector.appendChild(select__dropdown);
-    _anchor.parentNode.replaceChild(_selector, _anchor);
+    _wrapper.appendChild(_selector)
+    _wrapper.appendChild(_dropdown)
+    _anchor.parentNode.replaceChild(_wrapper, _anchor)
   }
-
-  let dropdown__optionBlock = document.querySelector(".select__dropdown__option-block"); 
 
   function init(cssSelector, params) {
     _anchor = document.querySelector(cssSelector);
 
-  
-
     if (_anchor instanceof HTMLElement) {
-
-      initializeParams(params);
-      console.log(_params);
-
-      _search();
-       _create('div', select__dropdown, {
-        className: "select__dropdown__option-block"
-      });
-      console.log(_anchor);
-
-      _options();
-      _hideSeek();
-
-      _render();
+      _initializeParams(params)
+      _initializeSelector()
+      _render()
     } else {
-      console.error('Anchor not found');
+      console.error('Anchor not found')
     }
   }
 
-  function toggle(event) {
-    event === undefined ? false :event.stopPropagation();
-    document.querySelector(".button-wrapper__button-arrow").classList.toggle("select__arrow_down");
-    select__dropdown.classList.toggle("select__dropdown_hide");
+  function _openDropdown() {
+    document.querySelector(".button-wrapper__button-arrow").classList.remove("select__arrow_down")
+    _dropdown.classList.remove("select__dropdown_hide")
+    _dropdownOpen = true
+    _optionsCreate()
   }
 
+  function _closeDropdown() {
+    document.querySelector(".button-wrapper__button-arrow").classList.add("select__arrow_down")
+    _dropdown.classList.add("select__dropdown_hide")
 
-  return init;
+    _searchInput.value = ''
+
+    if (_params.type === TYPE_MULTI) {
+      checkboxValues = [...arrayValues]
+      _params.autoApply && _onChange(arrayValues)
+    }
+
+    _dropdownOpen = false
+  }
+
+  function toggle(event) {
+    event && event.stopPropagation();
+    _dropdownOpen ? _closeDropdown() : _openDropdown();
+  }
+
+  return init
 
 })();
-
-// {
-//   _items = []
-//   _params = {}
-
-//   selectedValue = 'string' || ['string'];
-//   checkedValues = [];
-
-//   select = element
-//   dropdown = element
-//   optionBLock = element
-
-//   _initialRender() {
-//     renderSearch();
-//     renderOptions();
-//     renderControls();
-//   };
-
-//   // _toggleDropdown() {
-//   //   if (open) {
-//   //     checkedValues = selectedValues
-//   //     dropdown.addClass('visible');
-//   //   } close {
-//   //     _searchValue = '';
-//   //     _selectedValues = checkedValues;
-//   //     checkedValues();
-//   //     onChange();
-//   //     dropdown.removeClass('visible');
-//   //   }
-//   // };
-
-//   _submitValues() {
-//     _selectedValues = checkedValues;
-//     onChange();
-//   }
-
-//   _openDropdown();
-//   _closeDropdown() {
-//     dropdown.removeClass('visible');
-//   };
-
-//   _renderControls();
-//   _renderOption();
-//   _handleSearch();
-
-// }

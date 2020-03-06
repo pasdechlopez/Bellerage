@@ -1,4 +1,4 @@
-#select {
+.tds {
   position: relative;
 }
 
@@ -102,7 +102,7 @@ body:not("select"):active .select {
   display: none;
 }
 
-#select {
+.tds {
   width: 200px;
 }
 
